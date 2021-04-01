@@ -5,6 +5,11 @@ This file documents project changes. For convention details, see:
 
 ## [Unreleased]
 
+## [0.2.0]
+### Changed
+- [spinwheel-v0.2.0](spinwheel.py)
+    - Added resource_path function for pyinstaller
+
 ## [0.1.0]
 ### Added
 - [appointment-v0.1.0](appointment.py)
@@ -18,5 +23,6 @@ This file documents project changes. For convention details, see:
 - [user_profile-v0.1.0](user_profile.py)
 - [spinwheel-v0.1.0](spinwheel.py)
 
-[Unreleased]: https://github.com/hankaetos/pyqt-samples/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/hankaetos/pyqt-samples/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/hankaetos/pyqt-samples/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/hankaetos/pyqt-samples/releases/tag/v0.1.0

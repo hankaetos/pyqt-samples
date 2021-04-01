@@ -5,7 +5,7 @@
 SpinWheel GUI; randomly selects an item from a list.
 
 @author   hank.aetos@gmail.com
-@version  0.1.0
+@version  0.2.0
 @license  MIT
 
 --- Copyright (C) 2021 MAI Enterprises ---
@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
 
         self.setFixedSize(400, 420)
         self.setWindowTitle('SpinWheel')
-        self.setWindowIcon(QIcon('resources/mai_v0.1.0.png'))
+        self.setWindowIcon(QIcon(resource_path('resources/mai_v0.1.0.png')))
         self.create_actions()
         self.add_menubar()
         self.add_central_widget()
@@ -178,7 +178,8 @@ class MainWindow(QMainWindow):
 
             self.angle = angle
         else:
-            self.wheel_pixmap = QPixmap('resources/default_wheel.png')
+            self.wheel_pixmap = QPixmap(
+                resource_path('resources/default_wheel.png'))
             self.wheel_label.setPixmap(self.wheel_pixmap)
             self.wheel_label.repaint()
 
@@ -203,7 +204,7 @@ class MainWindow(QMainWindow):
         nspin_layout.addWidget(self.nspin_spinbox)
         nspin_layout.addStretch()
 
-        pointer_pixmap = QPixmap('resources/pointer.png')
+        pointer_pixmap = QPixmap(resource_path('resources/pointer.png'))
         pointer_label = QLabel(self)
         pointer_label.setAlignment(Qt.AlignCenter)
         pointer_label.setPixmap(pointer_pixmap)
@@ -279,6 +280,13 @@ class Selector:
         if not isinstance(items, list):
             raise ValueError(f'items={items} must be a list of strings!')
         return random.choice(items)
+
+
+def resource_path(relative_path):
+    """Translates asset paths to useable format for PyInstaller."""
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath('.'), relative_path)
 
 
 if __name__ == '__main__':
