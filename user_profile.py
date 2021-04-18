@@ -25,7 +25,7 @@ class UserProfileWindow(QWidget):
         self.initializeUI()
 
     def initializeUI(self):
-        self.setGeometry(100, 100, 300, 400)
+        self.setFixedSize(300, 375)
         self.setWindowTitle('User Profile')
         self.setStyleSheet('background-color: white;')
         self.displayImages()
@@ -61,29 +61,32 @@ class UserProfileWindow(QWidget):
         usr_h1_label = QLabel(self)
         usr_h1_label.setFont(h1_font)
         usr_h1_label.setText('Hank Aetos')
-        usr_h1_label.move(100, 160)
+        usr_h1_label.move(100, 165)
 
         # Biography
         bio_h1_label = QLabel(self)
         bio_h1_label.setText('Biography')
         bio_h1_label.setFont(h1_font)
-        bio_h1_label.move(10, 190)
+        bio_h1_label.move(10, 200)
 
         bio_b1_label = QLabel(self)
         bio_b1_label.setFont(b1_font)
-        bio_b1_label.setText("A polymath in the making.")
-        bio_b1_label.move(20, 210)
+        bio_b1_label.setText("A man's reach should extend beyond his grasp!")
+        bio_b1_label.setWordWrap(True)
+        bio_b1_label.move(20, 220)
 
         # Skills
         skills_h1_label = QLabel(self)
         skills_h1_label.setText('Skills')
         skills_h1_label.setFont(h1_font)
-        skills_h1_label.move(10, 240)
+        skills_h1_label.move(10, 280)
 
         skills_b1_label = QLabel(self)
         skills_b1_label.setFont(b1_font)
-        skills_b1_label.setText("Boxing | Coding | Investing")
-        skills_b1_label.move(20, 260)
+        skills_b1_label.setText("Boxing | Coding | Engineering\n"
+                                "Design | Investing | Music\n"
+                                "Philosophy | Writing | Lifting")
+        skills_b1_label.move(20, 300)
 
 
 def abspath(path):
