@@ -5,6 +5,8 @@
 !/resources/
 !/resources/*.png
 !/resources/*.webp
+!/screenshots/
+!/screenshots/*
 !.gitignore
 !CHANGELOG.md
 !appointment.py

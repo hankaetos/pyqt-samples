@@ -36,7 +36,7 @@ class UserProfileWindow(QWidget):
     def displayImages(self):
         # Backgound
         try:
-            with open('resources/marble.webp') as img:
+            with open(abspath('resources/marble.webp')) as img:
                 bg_label = QLabel(self)
                 bg_label.setPixmap(QPixmap(img.name))
         except FileNotFoundError:
@@ -45,7 +45,7 @@ class UserProfileWindow(QWidget):
 
         # Foreground
         try:
-            with open('resources/logo_v0.1.1.png') as img:
+            with open(abspath('resources/logo_v0.1.1.png')) as img:
                 fg_label = QLabel(self)
                 fg_label.setPixmap(QPixmap(img.name))
         except FileNotFoundError:
@@ -84,6 +84,13 @@ class UserProfileWindow(QWidget):
         skills_b1_label.setFont(b1_font)
         skills_b1_label.setText("Boxing | Coding | Investing")
         skills_b1_label.move(20, 260)
+
+
+def abspath(path):
+    """Converts resources path from relative to absolute."""
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, path)
+    return os.path.join(os.path.abspath('.'), path)
 
 
 if __name__ == '__main__':

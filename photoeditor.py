@@ -5,13 +5,14 @@
 Sample photo editor GUI.
 
 @author   hank.aetos@gmail.com
-@version  0.1.0
+@version  0.2.0
 @license  MIT
 
 --- Copyright (C) 2020 Hank Aetos ---
 """
 
 
+import os
 import sys
 
 from PyQt5.QtWidgets import (
@@ -37,27 +38,27 @@ class MainWindow(QMainWindow):
 
     def create_actions(self):
         # Create Open action.
-        open_action = QAction(QIcon('resources/open_file.png'), 'Open', self)
+        open_action = QAction(QIcon(abspath('resources/open_file.png')), 'Open', self)
         open_action.setShortcut('Ctrl+O')
         open_action.setStatusTip('Open image')
         open_action.triggered.connect(self.on_open)
 
         # Create Save action.
-        save_action = QAction(QIcon('resources/save_file.png'), 'Save', self)
+        save_action = QAction(QIcon(abspath('resources/save_file.png')), 'Save', self)
         save_action.setShortcut('Ctrl+S')
         save_action.setStatusTip('Save image')
         save_action.triggered.connect(self.on_save)
         save_action.setEnabled(False)
 
         # Create Print action.
-        print_action = QAction(QIcon('resources/print.png'), 'Print', self)
+        print_action = QAction(QIcon(abspath('resources/print.png')), 'Print', self)
         print_action.setShortcut('Ctrl+P')
         print_action.setStatusTip('Print image')
         print_action.triggered.connect(self.on_print)
         print_action.setEnabled(False)
 
         # Create Exit action.
-        exit_action = QAction(QIcon('resources/exit.png'), 'Exit', self)
+        exit_action = QAction(QIcon(abspath('resources/exit.png')), 'Exit', self)
         exit_action.setShortcut('Ctrl+Q')
         exit_action.setStatusTip('Quit program')
         exit_action.triggered.connect(self.close)
@@ -90,7 +91,7 @@ class MainWindow(QMainWindow):
         resize_action.setEnabled(False)
 
         # Create Clear action.
-        clear_action = QAction(QIcon('resources/clear.png'), 'Clear', self)
+        clear_action = QAction(QIcon(abspath('resources/clear.png')), 'Clear', self)
         clear_action.setShortcut('Ctrl+D')
         clear_action.setStatusTip('Clear image')
         clear_action.triggered.connect(self.on_clear)
@@ -317,6 +318,14 @@ class MainWindow(QMainWindow):
                            Qt.SmoothTransformation))
         self.image = QPixmap(rotated)
         self.image_label.repaint()
+
+
+def abspath(path):
+    """Converts resources path from relative to absolute."""
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, path)
+    return os.path.join(os.path.abspath('.'), path)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
