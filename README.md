@@ -1,19 +1,28 @@
 # PyQt Samples
-Various GUI samples. The following is just boiler-plate.
+Various GUI samples.
 
 ## Table of Contents
-- [Features](#features)
+- [Screenshots](#screenshots)
 - [Setup](#setup)
 - [Example](#example)
 - [License](#license)
 
-## Features
-Feature discussion:
-- Feature A
-- Feature B
+## Screenshots
+### Appointment
+![Appointment](screenshots/appointment.PNG)
+### Area Calculator
+![Area Calculator](screenshots/area_calculator.PNG)
+### Notepad
+![Notepad](screenshots/notepad.PNG)
+### Photo Editor
+![Photo Editor](screenshots/photo_editor.PNG)
+### Spin Wheel
+![Spin Wheel](screenshots/sphinwheel.PNG)
+### User Profile
+![User Profile](screenshots/user_profile.PNG)
 
 ## Setup
-> The following is here as boiler-plate; the conda package does not yet exist
+> The following is just boiler-plate; the conda package does not exist
 ```bash
 conda install -c hankaetos lib.pkg
 ```
@@ -24,7 +33,7 @@ conda install -c hankaetos lib.pkg
 python app.py
 ```
 ### API
-> The following is here as boiler-plate...
+> Also boiler-plate...
 ```python
 from hankaetos.lib.pkg import App
 
