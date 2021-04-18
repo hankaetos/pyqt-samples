@@ -17,7 +17,7 @@ Various GUI samples.
 ### Photo Editor
 ![Photo Editor](screenshots/photo_editor.PNG)
 ### Spin Wheel
-![Spin Wheel](screenshots/sphinwheel.gif)
+![Spin Wheel](screenshots/spinwheel.gif)
 ### User Profile
 ![User Profile](screenshots/user_profile.PNG)
 
