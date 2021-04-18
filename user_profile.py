@@ -71,8 +71,7 @@ class UserProfileWindow(QWidget):
 
         bio_b1_label = QLabel(self)
         bio_b1_label.setFont(b1_font)
-        bio_b1_label.setText("A man's reach should extend beyond his grasp!")
-        bio_b1_label.setWordWrap(True)
+        bio_b1_label.setText("A man's reach should extend beyond\nhis grasp!")
         bio_b1_label.move(20, 220)
 
         # Skills
